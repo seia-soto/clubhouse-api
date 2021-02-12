@@ -8,9 +8,24 @@ The API wrapper for Clubhouse application (drop-in audio chat) based on online p
 
 ## Table of Contents
 
+- [Installation](#installation)
+- [Usage](#usage)
 - [LICENSE](#LICENSE)
 
 ----
+
+# Installation
+
+To install this repository as your dependency, use following command with authorized git client:
+
+```ash
+yarn add git+https://github.com/Seia-Soto/clubhouse-api#[TAG]
+```
+
+# Usage
+
+For working example, you can refer `/example` folder of this repository.
+Also, about parameters for each API call functions, you need to inspect functions manually with notes that included with functions.
 
 # LICENSE
 
