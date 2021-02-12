@@ -1,7 +1,7 @@
 {
   "name": "clubhouse-api",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
+  "main": "src/index.js",
   "author": "Seia-Soto <seia@outlook.kr>",
   "license": "MIT",
   "devDependencies": {
@@ -13,6 +13,7 @@
     "eslint-plugin-promise": "^4.3.1"
   },
   "dependencies": {
+    "debug": "^4.3.1",
     "esm": "^3.2.25",
     "node-fetch": "^2.6.1",
     "qs": "^6.9.6",

@@ -1,5 +1,4 @@
-const esm = require('esm')
+// eslint-disable-next-line
+require = require('esm')(module)
 
-const esmImport = esm(module)
-
-module.exports = esmImport('./index.esm.js')
+module.exports = require('./index.esm.js')
