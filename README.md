@@ -10,6 +10,7 @@ The API wrapper for Clubhouse application (drop-in audio chat) based on online p
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Scripts](#scripts)
 - [LICENSE](#LICENSE)
 
 ----
@@ -26,6 +27,16 @@ yarn add git+https://github.com/Seia-Soto/clubhouse-api#[TAG]
 
 For working example, you can refer `/example` folder of this repository.
 Also, about parameters for each API call functions, you need to inspect functions manually with notes that included with functions.
+
+# Scripts
+
+## `yarn example`
+
+Runs example code.
+
+## `yarn profile`
+
+Create new prorfile JSON data by authenticating manually on command line shell.
 
 # LICENSE
 

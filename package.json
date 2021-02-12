@@ -1,9 +1,13 @@
 {
   "name": "clubhouse-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "src/index.js",
   "author": "Seia-Soto <seia@outlook.kr>",
   "license": "MIT",
+  "scripts": {
+    "example": "node example",
+    "profile": "node scripts/profile"
+  },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.19.0",

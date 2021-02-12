@@ -22,14 +22,11 @@ export default class Client {
       const apiName = apiNames[i]
       const fn = api[apiName]
 
-      // NOTE: fill profile automatically;
-      fn.bind(null, this.profile)
-
       // NOTE: create mock function to check what function is being called;
       this[apiName] = async (...args) => {
         this.debug('calling api function:', apiName)
 
-        return fn(...args)
+        return fn(this.profile, ...args)
       }
     }
   }

@@ -19,7 +19,10 @@ const agent = (url, options, customs) => {
   options.headers['CH-AppBuild'] = customs.appBuild || '297'
   options.headers['CH-DeviceId'] = customs.deviceId || uuidv4().toUpperCase()
   options.headers['CH-UserID'] = customs.userId || '(null)'
-  options.headers.Authorization = customs.token
+
+  if (customs.token) {
+    options.headers.Authorization = customs.token
+  }
   // NOTE: Application;
   options.headers.Accept = customs.accept || 'application/json'
   options.headers['Accept-Encoding'] = customs.acceptEncodings || 'gzip, deflate, br'
@@ -30,6 +33,7 @@ const agent = (url, options, customs) => {
 
   // NOTE: Body;
   if (options.body && typeof options.body === 'object') {
+    options.method = 'POST'
     options.headers['Content-Type'] = 'application/json; charset=utf-8'
     options.body = JSON.stringify(options.body)
   }
