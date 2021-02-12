@@ -4,9 +4,11 @@ const getOnlineFriends = async profile => {
   'use strict'
 
   const response = await agent(
-    '/get_online_friends', {
+    '/get_online_friends',
+    {
       body: {}
-    }, {
+    },
+    {
       ...profile,
       userId: '(null)'
     }

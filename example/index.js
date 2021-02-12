@@ -13,9 +13,10 @@ const profile = {
   ...profiles.locales.Korean
 }
 const profileLoc = path.join(__dirname, '../profile.json')
+let ctx = false
 
 if (fs.existsSync(profileLoc)) {
-  const ctx = JSON.parse(fs.readFileSync(profileLoc))
+  ctx = JSON.parse(fs.readFileSync(profileLoc))
 
   profile.token = ctx.tokens.auth
   profile.userId = ctx.user.user_id
@@ -27,6 +28,11 @@ const app = new Client({ profile })
 const start = async () => {
   app.debug(await app.checkForUpdate())
   app.debug(await app.getOnlineFriends())
+  app.debug(await app.getProfile())
+
+  if (ctx && ctx.user) {
+    app.debug(await app.getUser(ctx.user.user_id))
+  }
 }
 
 start()
