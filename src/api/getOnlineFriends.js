@@ -1,6 +1,6 @@
 import agent from '../structures/agent'
 
-const getOnlineFriend = async profile => {
+const getOnlineFriends = async profile => {
   'use strict'
 
   const response = await agent(
@@ -16,7 +16,7 @@ const getOnlineFriend = async profile => {
   return data
 }
 
-export default getOnlineFriend
+export default getOnlineFriends
 
 export const specification = {
   clubs: [
