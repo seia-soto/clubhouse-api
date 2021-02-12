@@ -1,4 +1,5 @@
 import fetch from 'node-fetch'
+import qs from 'qs'
 import { v4 as uuidv4 } from 'uuid'
 
 const agent = (url, options, customs) => {
@@ -8,6 +9,7 @@ const agent = (url, options, customs) => {
 
   options.headers = options?.headers || {}
 
+  // NOTE: Clubhouse;
   options.headers['User-Agent'] = customs?.userAgent || 'clubhouse/297 (iPhone; iOS 14.4; Scale/2.00)'
   options.headers['CH-Languages'] = customs?.languages || 'en-US'
   options.headers['CH-Locale'] = customs?.locale || 'en_US'
@@ -16,14 +18,25 @@ const agent = (url, options, customs) => {
   options.headers['CH-DeviceId'] = customs?.deviceId || uuidv4().toUpperCase()
   options.headers['CH-UserID'] = customs?.userId || '(null)'
   options.headers.Authorization = customs?.token
+  // NOTE: Application;
   options.headers.Accept = customs?.accept || 'application/json'
   options.headers['Accept-Encoding'] = customs?.acceptEncodings || 'gzip, deflate, br'
   options.headers['Accept-Language'] = customs?.acceptLanguages || 'ko-KR;q=1'
+  // NOTE: Specification;
   options.headers.Connection = 'keep-alive'
+  options.headers.Host = 'www.clubhouseapi.com'
 
+  // NOTE: Body;
   if (options.body && typeof options.body === 'object') {
     options.headers['Content-Type'] = 'application/json; charset=utf-8'
     options.body = JSON.stringify(options.body)
+  }
+
+  // NOTE: Querystring;
+  if (options.query) {
+    url += '?' + qs.stringify(options.query)
+
+    delete options.query
   }
 
   return fetch(url, options)
