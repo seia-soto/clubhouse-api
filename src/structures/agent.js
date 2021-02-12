@@ -21,7 +21,7 @@ const agent = (url, options, customs) => {
   options.headers['CH-UserID'] = customs.userId || '(null)'
 
   if (customs.token) {
-    options.headers.Authorization = customs.token
+    options.headers.Authorization = 'Token ' + customs.token
   }
   // NOTE: Application;
   options.headers.Accept = customs.accept || 'application/json'

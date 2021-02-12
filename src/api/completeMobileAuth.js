@@ -15,3 +15,19 @@ const completeMobileAuth = async (profile, phoneNumber, code) => {
 }
 
 export default completeMobileAuth
+
+export const specification = {
+  success: Boolean,
+  is_verified: Boolean,
+  user_profile: {
+    user_id: Number,
+    name: String,
+    photo_url: String,
+    username: String
+  },
+  auth_token: String, // (approx) MD5 hash of Token
+  refresh_token: String, // JsonWebToken
+  access_token: String, // JsonWebToken
+  is_waitlisted: Boolean,
+  is_onboarding: Boolean // isFirstLogin
+}

@@ -14,3 +14,9 @@ const requestMobileAuth = async (profile, phoneNumber) => {
 }
 
 export default requestMobileAuth
+
+export const specification = {
+  success: Boolean,
+  is_blocked: Boolean,
+  error_message: String
+}

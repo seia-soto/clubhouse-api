@@ -14,3 +14,8 @@ const checkForUpdate = async (profile, isTestFlight) => {
 }
 
 export default checkForUpdate
+
+export const specification = {
+  has_update: Boolean,
+  success: Boolean
+}
