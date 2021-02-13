@@ -29,5 +29,6 @@ export const specification = {
   refresh_token: String, // JsonWebToken
   access_token: String, // JsonWebToken
   is_waitlisted: Boolean,
-  is_onboarding: Boolean // isFirstLogin
+  is_onboarding: Boolean, // isFirstLogin
+  number_of_attempts_remaining: Number // (approx) applied when only 3 times remained
 }
