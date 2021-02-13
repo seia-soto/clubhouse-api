@@ -37,6 +37,7 @@ import unfollowUser from './unfollowUser'
 import addTopic from './addTopic'
 import removeTopic from './removeTopic'
 import updateNotifications from './updateNotifications'
+import updateBio from './updateBio'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -81,5 +82,6 @@ export {
   unfollowUser,
   addTopic,
   removeTopic,
-  updateNotifications
+  updateNotifications,
+  updateBio
 }
