@@ -12,6 +12,7 @@ The API wrapper for Clubhouse application (drop-in audio chat) based on online p
 - [Usage](#usage)
 - [Scripts](#scripts)
 - [Reverse Engineering](#reverse-engineering)
+- [API](#api)
 - [LICENSE](#LICENSE)
 
 ----
@@ -91,6 +92,32 @@ You need to configure fiddler via [the official guide](https://docs.telerik.com/
 #### MITM Proxy
 
 If you've setup MITM proxy, open `https://mitm.it` on your iPhone, then install certificate.
+
+# API
+
+About the API implemented in this project.
+Only special things will be typed.
+
+## `client.getStatic(url)`
+
+`client.getStatic` method will return a `node-fetch` agent which having essential headers to query static files.
+For example, you can download profile picture safely by using this method.
+
+```js
+const download = url => {
+  const fs = require('fs')
+
+  const response = await app.getStatic(url)
+  const stream = fs.createWriteStream('./avatar.png')
+
+  return new Promise((resolve, reject) => {
+    response.body.pipe(stream)
+    response.body.on('error', reject)
+
+    stream.on('finish', resolve)
+  })
+}
+```
 
 # LICENSE
 
