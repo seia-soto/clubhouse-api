@@ -1,6 +1,6 @@
 import agent from '../structures/agent'
 
-const getChannels = async (profile, contacts) => {
+const getSuggestedInvites = async (profile, contacts) => {
   'use strict'
 
   const response = await agent(
@@ -22,7 +22,7 @@ const getChannels = async (profile, contacts) => {
   return data
 }
 
-export default getChannels
+export default getSuggestedInvites
 
 export const specification = {
   num_invites: Number,
