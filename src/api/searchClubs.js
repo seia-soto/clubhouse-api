@@ -1,12 +1,12 @@
 import agent from '../structures/agent'
 
-const searchUsers = async (profile, opts) => {
+const searchClubs = async (profile, opts) => {
   'use strict'
 
   opts = opts || {}
 
   const response = await agent(
-    '/search_users',
+    '/search_clubs',
     {
       body: {
         cofollows_only: opts.onlyCoFollows || false,
@@ -22,20 +22,23 @@ const searchUsers = async (profile, opts) => {
   return data
 }
 
-export default searchUsers
+export default searchClubs
 
 export const specification = {
+  clubs: [
+    {
+      club_id: Number,
+      description: String,
+      is_follower: Boolean,
+      is_member: Boolean,
+      name: String,
+      num_followers: Number,
+      num_members: Number,
+      photo_url: String
+    }
+  ],
   count: Number,
   next: Number,
   previous: Number,
-  success: Boolean,
-  users: [
-    {
-      bio: String,
-      name: String,
-      photo_url: String,
-      user_id: Number,
-      username: String
-    }
-  ]
+  success: Boolean
 }

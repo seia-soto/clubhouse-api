@@ -9,6 +9,8 @@ import getSuggestedInvites from './getSuggestedInvites'
 import getEvents from './getEvents'
 import getSuggestedFollows from './getSuggestedFollows'
 import getTopics from './getTopics'
+import searchUsers from './searchUsers'
+import searchClubs from './searchClubs'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -25,5 +27,7 @@ export {
   getEvents,
   getStatic,
   getSuggestedFollows,
-  getTopics
+  getTopics,
+  searchUsers,
+  searchClubs
 }
