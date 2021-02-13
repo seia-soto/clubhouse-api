@@ -91,7 +91,7 @@ You need to configure fiddler via [the official guide](https://docs.telerik.com/
 
 #### MITM Proxy
 
-If you've setup MITM proxy, open `https://mitm.it` on your iPhone, then install certificate.
+If you've setup MITM proxy, open `http://mitm.it` on your iPhone, then install certificate.
 
 # API
 

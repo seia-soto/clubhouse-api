@@ -16,6 +16,7 @@ import getClubsOfTopic from './getClubsOfTopic'
 import getClub from './getClub'
 import getClubMembers from './getClubMembers'
 import getAvailableTargetChannels from './getAvailableTargetChannels'
+import createChannel from './createChannel'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -39,5 +40,6 @@ export {
   getClubsOfTopic,
   getClub,
   getClubMembers,
-  getAvailableTargetChannels
+  getAvailableTargetChannels,
+  createChannel
 }
