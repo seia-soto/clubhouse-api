@@ -11,6 +11,8 @@ import getSuggestedFollows from './getSuggestedFollows'
 import getTopics from './getTopics'
 import searchUsers from './searchUsers'
 import searchClubs from './searchClubs'
+import getUsersOfTopic from './getUsersOfTopic'
+import getClubsOfTopic from './getClubsOfTopic'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -29,5 +31,7 @@ export {
   getSuggestedFollows,
   getTopics,
   searchUsers,
-  searchClubs
+  searchClubs,
+  getUsersOfTopic,
+  getClubsOfTopic
 }
