@@ -22,6 +22,8 @@ import leaveChannel from './leaveChannel'
 import getSettings from './getSettings'
 import joinChannel from './joinChannel'
 import activePing from './activePing'
+import makeChannelPublic from './makeChannelPublic'
+import makeChannelSocial from './makeChannelSocial'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -51,5 +53,7 @@ export {
   leaveChannel,
   getSettings,
   joinChannel,
-  activePing
+  activePing,
+  makeChannelPublic,
+  makeChannelSocial
 }
