@@ -45,16 +45,14 @@ Create new prorfile JSON data by authenticating manually on command line shell.
 To reverse engineer Clubhouse audio chat application, only thing we need is jailbroken device.
 Because there is nothing else except for SSL certificate pinning and we can bypass it even on iOS 14 which is the latest release of iOS by installing some tweaks.
 
-## Preparation
-
-### Jailbreaking
+## Jailbreaking
 
 > Use [Odyssey](https://theodyssey.dev/), if you're on iOS 13.6 or higher.
 
 To jailbreak, I recommend you to use [Unc0ver](https://unc0ver.dev/) instead of others due to stability.
 Setup AltServer on your PC or Mac and then install Unc0ver
 
-#### iOS 14
+### iOS 14
 
 > You're not able to use checkm8 exploit if you're on iPhone 11 or higher (higher than A11).
 
@@ -62,9 +60,14 @@ If you're on iOS 14 or higher version, use [Checkra1n](https://checkra.in/) vers
 This this time, you need to disable your iPhone's passcode manually before jailbreaking.
 Also, **DO NOT USE LATEST RELEASE** of checkra1n to avoid issue on A11.
 
-#### Post installation
+### Post installation
 
 If you install OpenSSH server to debug on remote PC, you need to **CHANGE BOTH `root` AND `mobile` USER'S PASSWORD**.
+
+```ash
+passwd root
+passwd mobile
+```
 
 ### Installing tweaks
 
@@ -76,7 +79,7 @@ If you touch share button and then share the file to filza, you can directly ins
 
 - [nabla/ssl-kill-switch2](https://github.com/nabla-c0d3/ssl-kill-switch2)
 
-### Setting up MITM proxy
+## Setting up MITM proxy
 
 You can set up MITM proxy with following tools:
 
@@ -85,13 +88,47 @@ You can set up MITM proxy with following tools:
 
 Install toolchains and follow steps to decrypt HTTPS traffics:
 
-#### Fiddler
+### Fiddler
 
 You need to configure fiddler via [the official guide](https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureForiOS).
 
-#### MITM Proxy
+### MITM Proxy
 
 If you've setup MITM proxy, open `http://mitm.it` on your iPhone, then install certificate.
+
+## Wireshark remote debugging
+
+By piping stream over SSH, you can also debug your iPhone's traffic with wireshark installed on PC.
+Before doing this, install `OpenSSH` and `tcpdump` tweak on your iPhone and install Wireshark on your PC.
+
+You may add following paths to system wide environment variable:
+
+- `C:\Program Files\Wireshark`
+
+After setting up `itunnel-mux` or `3uTools` from below, open new command line window and start debugging with built-in ssh on Windows 10.
+
+```cmd
+ssh root@localhost -p 2222 -l root tcpdump -s 0 -U -n -w - -i any not port 22 | wireshark -k -i -
+```
+
+### itunnel-mux
+
+Download `itunnel_mux_rev71.zip` from following webpage and add it to path.
+At this time, you should install iTunes and Apple Mobile Support before continuing.
+
+- [Google Code Archive/iphonetunnel-usbmuxconnectbyport](https://code.google.com/archive/p/iphonetunnel-usbmuxconnectbyport/downloads)
+
+Open it and start proxy after connecting iPhone.
+
+```cmd
+itunnel_mux --iport 22 --lport 22
+```
+
+### 3uTools
+
+Also, you can do this easier with 3uTools which only available on Windows.
+Download and install it to your PC and connect iPhone via USB.
+Then you can go to `Toolbox` tab and click `Open SSH Tunnel` to open SSH port locally.
 
 # API
 
