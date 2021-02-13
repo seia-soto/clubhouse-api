@@ -5,14 +5,19 @@ const getEvents = async (profile, opts) => {
 
   opts = opts || {}
 
+  const query = {
+    page_size: opts.size || 25,
+    page: opts.page || 1
+  }
+
+  if (opts.is_filtered) {
+    query.is_filtered = opts.isFiltered || true // NOTE: [true, false, undefined]['Upcoming For You', 'All Upcoming', 'My Events']
+  }
+
   const response = await agent(
     '/get_events',
     {
-      query: {
-        is_filtered: opts.isFiltered || true,
-        page_size: opts.size || 25,
-        page: opts.page || 1
-      }
+      query
     },
     profile
   )

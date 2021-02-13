@@ -34,6 +34,8 @@ import followClub from './followClub'
 import unfollowClub from './unfollowClub'
 import followUser from './followUser'
 import unfollowUser from './unfollowUser'
+import addTopic from './addTopic'
+import removeTopic from './removeTopic'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -75,5 +77,7 @@ export {
   followClub,
   unfollowClub,
   followUser,
-  unfollowUser
+  unfollowUser,
+  addTopic,
+  removeTopic
 }
