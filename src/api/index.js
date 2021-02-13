@@ -38,6 +38,8 @@ import addTopic from './addTopic'
 import removeTopic from './removeTopic'
 import updateNotifications from './updateNotifications'
 import updateBio from './updateBio'
+import getFollowers from './getFollowers'
+import getFollowings from './getFollowings'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -83,5 +85,7 @@ export {
   addTopic,
   removeTopic,
   updateNotifications,
-  updateBio
+  updateBio,
+  getFollowers,
+  getFollowings
 }
