@@ -1,6 +1,6 @@
 {
   "name": "clubhouse-api",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "src/index.js",
   "author": "Seia-Soto <seia@outlook.kr>",
   "license": "MIT",

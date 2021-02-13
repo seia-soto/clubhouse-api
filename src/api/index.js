@@ -24,6 +24,11 @@ import joinChannel from './joinChannel'
 import activePing from './activePing'
 import makeChannelPublic from './makeChannelPublic'
 import makeChannelSocial from './makeChannelSocial'
+import createEvent from './createEvent'
+import getEvent from './getEvent'
+import getClubs from './getClubs'
+import editEvent from './editEvent'
+import deleteEvent from './deleteEvent'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -55,5 +60,10 @@ export {
   joinChannel,
   activePing,
   makeChannelPublic,
-  makeChannelSocial
+  makeChannelSocial,
+  createEvent,
+  getEvent,
+  getClubs,
+  editEvent,
+  deleteEvent
 }
