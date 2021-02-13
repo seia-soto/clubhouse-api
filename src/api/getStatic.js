@@ -4,7 +4,7 @@ import qs from 'qs'
 const getStatic = (profile, url, options) => {
   'use strict'
 
-  url = 'https://www.clubhouseapi.com/api' + (url || '')
+  url = url || ''
 
   options = options || {}
   options.headers = options.headers || {}

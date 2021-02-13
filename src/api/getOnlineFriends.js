@@ -8,10 +8,7 @@ const getOnlineFriends = async profile => {
     {
       body: {}
     },
-    {
-      ...profile,
-      userId: '(null)'
-    }
+    profile
   )
   const data = await response.json()
 

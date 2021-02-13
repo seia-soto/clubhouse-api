@@ -6,7 +6,7 @@ const getSuggestedFollows = async (profile, opts) => {
   opts = opts || {}
 
   const response = await agent(
-    '/me',
+    '/get_suggested_follows_all',
     {
       query: {
         in_onboarding: opts.onBoarding || false,

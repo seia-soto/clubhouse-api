@@ -13,10 +13,7 @@ const getClub = async (profile, opts) => {
         source_topic_id: opts.sourceTopicId || null
       }
     },
-    {
-      ...profile,
-      userId: '(null)'
-    }
+    profile
   )
   const data = await response.json()
 

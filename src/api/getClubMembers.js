@@ -16,10 +16,7 @@ const getClubMembers = async (profile, opts) => {
         page: opts.page || 1
       }
     },
-    {
-      ...profile,
-      userId: '(null)'
-    }
+    profile
   )
   const data = await response.json()
 
