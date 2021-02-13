@@ -1,7 +1,13 @@
 import agent from '../structures/agent'
 
-const getClub = async (profile, opts) => {
+const getClub = async (profile, opts) => { // NOTE: opts = Number | Object;
   'use strict'
+
+  if (typeof opts === 'number') {
+    opts = {
+      clubId: opts
+    }
+  }
 
   opts = opts || {}
 

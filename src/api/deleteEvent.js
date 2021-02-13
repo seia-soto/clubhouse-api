@@ -5,7 +5,7 @@ const deleteEvent = async (profile, opts) => { // NOTE: opts = Number | Object;
 
   if (typeof opts === 'number') {
     opts = {
-      id: opts
+      eventId: opts
     }
   }
 
