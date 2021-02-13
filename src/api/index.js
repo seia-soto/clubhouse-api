@@ -36,6 +36,7 @@ import followUser from './followUser'
 import unfollowUser from './unfollowUser'
 import addTopic from './addTopic'
 import removeTopic from './removeTopic'
+import updateNotifications from './updateNotifications'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -79,5 +80,6 @@ export {
   followUser,
   unfollowUser,
   addTopic,
-  removeTopic
+  removeTopic,
+  updateNotifications
 }
