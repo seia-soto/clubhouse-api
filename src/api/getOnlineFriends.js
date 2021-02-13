@@ -33,7 +33,12 @@ export const specification = {
       is_follow_allowed: Boolean,
       is_membership_private: Boolean,
       is_community: Boolean,
-      rules: [],
+      rules: [
+        {
+          desc: String,
+          title: String
+        }
+      ],
       num_online: Number,
       is_admin: Boolean,
       online_members: [

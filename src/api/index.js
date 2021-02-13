@@ -13,6 +13,8 @@ import searchUsers from './searchUsers'
 import searchClubs from './searchClubs'
 import getUsersOfTopic from './getUsersOfTopic'
 import getClubsOfTopic from './getClubsOfTopic'
+import getClub from './getClub'
+import getClubMembers from './getClubMembers'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -33,5 +35,7 @@ export {
   searchUsers,
   searchClubs,
   getUsersOfTopic,
-  getClubsOfTopic
+  getClubsOfTopic,
+  getClub,
+  getClubMembers
 }

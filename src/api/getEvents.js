@@ -41,10 +41,12 @@ export const specification = {
         num_members: Number,
         num_online: Number,
         photo_url: String,
-        rules: {
-          desc: String,
-          title: String
-        }
+        rules: [
+          {
+            desc: String,
+            title: String
+          }
+        ]
       },
       club_is_follower: Number,
       club_is_member: Number,
