@@ -9,7 +9,7 @@ const getClubMembers = async (profile, opts) => {
     '/get_club_members',
     {
       query: {
-        club_id: opts.clubId || 1,
+        club_id: opts.clubId || -1,
         return_followers: Number(!!opts.returnFollowers) || 0,
         return_members: Number(!!opts.returnMembers) || 1,
         page_size: opts.size || 50,

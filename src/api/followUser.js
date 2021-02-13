@@ -1,22 +1,24 @@
 import agent from '../structures/agent'
 
-const followClub = async (profile, opts) => { // NOTE: opts = Number | Object;
+const followUser = async (profile, opts) => { // NOTE: opts = Number | Object;
   'use strict'
 
   if (typeof opts === 'number') {
     opts = {
-      clubId: opts
+      userId: opts
     }
   }
 
   opts = opts || {}
 
   const response = await agent(
-    '/follow_club',
+    '/follow',
     {
       body: {
-        club_id: opts.clubId || -1,
-        source_topic_id: opts.sourceTopicId || null
+        source: 9, // NOTE: unknown; (approx) search;
+        source_topic_id: null,
+        user_id: opts.userId || -1,
+        user_ids: null
       }
     },
     profile
@@ -26,7 +28,7 @@ const followClub = async (profile, opts) => { // NOTE: opts = Number | Object;
   return data
 }
 
-export default followClub
+export default followUser
 
 export const specification = {
   success: Boolean

@@ -15,7 +15,7 @@ const getClub = async (profile, opts) => { // NOTE: opts = Number | Object;
     '/get_club',
     {
       body: {
-        club_id: opts.clubId || 1,
+        club_id: opts.clubId || -1,
         source_topic_id: opts.sourceTopicId || null
       }
     },

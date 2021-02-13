@@ -9,8 +9,8 @@ const inviteToExistingChannel = async (profile, opts) => {
     '/invite_to_existing_channel',
     {
       body: {
-        channel: opts.channel || 0, // NOTE: Channel Id;
-        user_ids: opts.user || 0 // NOTE: User Id;
+        channel: opts.channel || -1, // NOTE: Channel Id;
+        user_ids: opts.user || -1 // NOTE: User Id;
       }
     },
     profile

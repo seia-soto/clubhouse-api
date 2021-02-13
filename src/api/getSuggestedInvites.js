@@ -9,9 +9,9 @@ const getSuggestedInvites = async (profile, contacts) => {
       body: {
         club_id: null, // NOTE: This API is still private even for normal user;
         upload_contacts: true,
-        contacts/*: {
+        contacts/*: [
           phone_number: String // +821012345678
-        }
+        ]
         */
       }
     },

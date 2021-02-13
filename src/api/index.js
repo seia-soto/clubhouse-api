@@ -32,6 +32,8 @@ import deleteEvent from './deleteEvent'
 import inviteToExistingChannel from './inviteToExistingChannel'
 import followClub from './followClub'
 import unfollowClub from './unfollowClub'
+import followUser from './followUser'
+import unfollowUser from './unfollowUser'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -71,5 +73,7 @@ export {
   deleteEvent,
   inviteToExistingChannel,
   followClub,
-  unfollowClub
+  unfollowClub,
+  followUser,
+  unfollowUser
 }
