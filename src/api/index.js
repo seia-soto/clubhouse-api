@@ -21,6 +21,7 @@ import getSuggestedSpeakers from './getSuggestedSpeakers'
 import leaveChannel from './leaveChannel'
 import getSettings from './getSettings'
 import joinChannel from './joinChannel'
+import activePing from './activePing'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -49,5 +50,6 @@ export {
   getSuggestedSpeakers,
   leaveChannel,
   getSettings,
-  joinChannel
+  joinChannel,
+  activePing
 }
