@@ -3,6 +3,8 @@ import agent from '../structures/agent'
 const getEvents = async (profile, opts) => {
   'use strict'
 
+  opts = opts || {}
+
   const response = await agent(
     '/get_events',
     {
