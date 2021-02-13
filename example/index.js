@@ -27,12 +27,16 @@ const app = new Client({ profile })
 
 const start = async () => {
   app.debug(await app.checkForUpdate())
+
+  if (!ctx) {
+    return
+  }
+
   app.debug(await app.getOnlineFriends())
   app.debug(await app.getProfile())
-
-  if (ctx && ctx.user) {
-    app.debug(await app.getUser(ctx.user.user_id))
-  }
+  app.debug(await app.getUser(ctx.user.user_id))
+  app.debug(await app.getChannels())
+  app.debug(await app.getEvents())
 }
 
 start()

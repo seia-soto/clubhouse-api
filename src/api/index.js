@@ -4,6 +4,9 @@ import completeMobileAuth from './completeMobileAuth'
 import getOnlineFriends from './getOnlineFriends'
 import getProfile from './getProfile'
 import getUser from './getUser'
+import getChannels from './getChannels'
+import getSuggestedInvites from './getSuggestedInvites'
+import getEvents from './getEvents'
 
 export {
   checkForUpdate,
@@ -11,5 +14,8 @@ export {
   completeMobileAuth,
   getOnlineFriends,
   getProfile,
-  getUser
+  getUser,
+  getChannels,
+  getSuggestedInvites,
+  getEvents
 }
