@@ -7,6 +7,8 @@ import getUser from './getUser'
 import getChannels from './getChannels'
 import getSuggestedInvites from './getSuggestedInvites'
 import getEvents from './getEvents'
+import getSuggestedFollows from './getSuggestedFollows'
+import getTopics from './getTopics'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -21,5 +23,7 @@ export {
   getChannels,
   getSuggestedInvites,
   getEvents,
-  getStatic
+  getStatic,
+  getSuggestedFollows,
+  getTopics
 }

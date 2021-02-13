@@ -9,9 +9,9 @@ const getProfile = async (profile, opts) => {
     '/me',
     {
       body: {
-        return_blocked_id: opts.includeBlocked,
-        timezone_identifier: opts.timezone,
-        return_following_ids: opts.includeFollowings
+        return_blocked_id: opts.includeBlocked || true,
+        timezone_identifier: profile.timezone || opts.timezone, // NOTE: Asia/Seoul
+        return_following_ids: opts.includeFollowings || true
       }
     },
     {
