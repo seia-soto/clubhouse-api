@@ -8,6 +8,9 @@ import getChannels from './getChannels'
 import getSuggestedInvites from './getSuggestedInvites'
 import getEvents from './getEvents'
 
+// NOTE: Externals
+import getStatic from './getStatic'
+
 export {
   checkForUpdate,
   requestMobileAuth,
@@ -17,5 +20,6 @@ export {
   getUser,
   getChannels,
   getSuggestedInvites,
-  getEvents
+  getEvents,
+  getStatic
 }
