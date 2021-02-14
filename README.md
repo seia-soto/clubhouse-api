@@ -69,16 +69,6 @@ passwd root
 passwd mobile
 ```
 
-### Installing tweaks
-
-> Install Cydia from Checkra1n Loader if you're using checkra1n.
-
-Install required updates from Cydia for security reasons and install Filza File Manager or terminal emulator to install package file manually.
-Open following repo and download latest release from it.
-If you touch share button and then share the file to filza, you can directly install package file.
-
-- [nabla/ssl-kill-switch2](https://github.com/nabla-c0d3/ssl-kill-switch2)
-
 ## Setting up MITM proxy
 
 You can set up MITM proxy with following tools:
@@ -95,6 +85,36 @@ You need to configure fiddler via [the official guide](https://docs.telerik.com/
 ### MITM Proxy
 
 If you've setup MITM proxy, open `http://mitm.it` on your iPhone, then install certificate.
+
+## Bypassing SSL Pinning
+
+To inspect SSL Pinning, there are ways to bypass it easily.
+
+### ssl-kill-switch
+
+Install required updates from Cydia for security reasons and install Filza File Manager or terminal emulator to install package file manually.
+Open following repo and download latest release from it.
+If you touch share button and then share the file to filza, you can directly install package file.
+
+- [nabla/ssl-kill-switch2](https://github.com/nabla-c0d3/ssl-kill-switch2)
+
+After installation, turn it on in settings app.
+
+### frida-ios-hook
+
+Install iTunes and Python3 on your PC and open iTunes after install.
+Connect to your iPhone shell via methods described in [Wireshark remote debugging](#wireshark-remote-debugging) section.
+Clone following repository to some directory:
+
+- [noobpk/frida-ios-hook](https://github.com/noobpk/frida-ios-hook)
+
+After, all things are ready, run script via following command:
+
+```cmd
+python3 hook.py -n clubhouse -s frida-scripts\bypass-ssl-ios13.js
+```
+
+- The script also works on iOS 14.
 
 ## Wireshark remote debugging
 
