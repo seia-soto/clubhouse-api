@@ -3,13 +3,15 @@ import { customAlphabet } from 'nanoid'
 
 import agent from '../structures/agent'
 
+const random = customAlphabet('1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ', 16)
+
 const updateAvatar = async (profile, buffer) => {
   'use strict'
 
   const form = new FormData()
-  const boundary = 'Boundary+' + customAlphabet('1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ', 16)
+  const boundary = 'Boundary+' + random()
 
-  form.setBoundary(boundary)
+  form._boundary = boundary // NOTE: `form.setBoundary` isn't implemented, yet.
   form.append('file', buffer, {
     // NOTE: I recommend you not to change below to make sure you're not in a third party client.
     /*
