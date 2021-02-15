@@ -1,6 +1,6 @@
 {
   "name": "clubhouse-api",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "src/index.js",
   "author": "Seia-Soto <seia@outlook.kr>",
   "license": "MIT",
@@ -20,6 +20,8 @@
   "dependencies": {
     "debug": "^4.3.1",
     "esm": "^3.2.25",
+    "form-data": "^3.0.0",
+    "nanoid": "^3.1.20",
     "node-fetch": "^2.6.1",
     "qs": "^6.9.6",
     "uuid": "^8.3.2"

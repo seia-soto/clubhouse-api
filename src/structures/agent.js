@@ -32,7 +32,7 @@ const agent = (url, options, customs) => {
   options.headers.Host = 'www.clubhouseapi.com'
 
   // NOTE: Body;
-  if (options.body && typeof options.body === 'object') {
+  if (!customs._preventBodySerialization && options.body && typeof options.body === 'object') {
     options.method = 'POST'
     options.headers['Content-Type'] = 'application/json; charset=utf-8'
     options.body = JSON.stringify(options.body)

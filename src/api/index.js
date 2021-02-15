@@ -40,6 +40,7 @@ import updateNotifications from './updateNotifications'
 import updateBio from './updateBio'
 import getFollowers from './getFollowers'
 import getFollowings from './getFollowings'
+import updateAvatar from './updateAvatar'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -87,5 +88,6 @@ export {
   updateNotifications,
   updateBio,
   getFollowers,
-  getFollowings
+  getFollowings,
+  updateAvatar
 }
