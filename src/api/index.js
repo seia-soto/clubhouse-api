@@ -41,6 +41,10 @@ import updateBio from './updateBio'
 import getFollowers from './getFollowers'
 import getFollowings from './getFollowings'
 import updateAvatar from './updateAvatar'
+import checkWaitlistStatus from './checkWaitlistStatus'
+import recordActionTrails from './recordActionTrails'
+import updateName from './updateName'
+import updateUsername from './updateUsername'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -89,5 +93,9 @@ export {
   updateBio,
   getFollowers,
   getFollowings,
-  updateAvatar
+  updateAvatar,
+  checkWaitlistStatus,
+  recordActionTrails,
+  updateName,
+  updateUsername
 }
