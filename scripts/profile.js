@@ -26,7 +26,9 @@ const quote = (f, ...message) => {
   console.log('\n- ' + f, ...message)
 }
 
-module.exports = (async () => {
+const req = {}
+
+const init = async () => {
   process.title = 'Seia-Soto/clubhouse-api - Interactive authentication shell'
 
   console.log(`by Seia-Soto
@@ -102,7 +104,6 @@ module.exports = (async () => {
   const client = new Client({
     profile
   })
-  const req = {}
 
   quote('Checking for application update...')
 
@@ -175,20 +176,97 @@ module.exports = (async () => {
     console.log('WARNING: <IMPORTANT> YOU ARE STILL ON WAITLIST!')
   }
   if (req.login.is_onboarding) {
+    if (req.login.user_profile.name || req.login.user_profile.username) {
+      quote('Detected that you ALREADY SIGNED UP!')
+      console.log('You tried to call APIs to sign up again but this is not recommended.')
+      console.log(JSON.stringify(req.login.user_profile, null, 2))
+    }
+
     console.log('WARNING: <IMPORTANT> YOU ARE FIRST TIME ON CLUBHOUSE!')
     console.log('Please use real device to reduce the rate of being banned.')
+
+    quote('Updating clubhouse-api/client profile to emulate real application...')
+
+    client.profile.userId = req.login.user_profile.id
+    client.profile.token = req.login.auth_token
+
+    // NOTE: Sign up;
+    quote('To start sign up process if you want to stop just press <CTRL + C>, otherwise <PRESS ENTER>.')
+
+    await getAnswer(createInterface())
+
+    quote('Please <type> your full name, which is formatted in `{firstName} {lastName}`.')
+    console.log('For example, my first name is Seia and last name is Soto, then we need to put `Seia Soto`.')
+    console.log('WARNING: DO NOT PUT ` CHARACTER IN REAL ANSWER.')
+
+    const name = await getAnswer(createInterface())
+
+    quote('We detected that your name is', name + '! To continue, please <PRESS ENTER>.')
+
+    await getAnswer(createInterface())
+
+    req.name = await client.updateName(name)
+
+    if (!req.name.success) {
+      console.log('ERROR: <IMPORTANT> CANNOT CONTINUE BECAUSE REQUEST FAILED!')
+      console.log(req.name)
+
+      process.exit(1)
+    }
+
+    quote('Please <type> your username to reserve below.')
+    console.log('WARNING: The length of username should be 16 or lower.')
+
+    const username = await getAnswer(createInterface())
+
+    quote('Your username will be set as @' + username + '! To continue, please <PRESS ENTER>.')
+
+    await getAnswer(createInterface())
+
+    req.username = await client.updateUsername(username)
+
+    if (!req.username.success) {
+      console.log('ERROR: <IMPORTANT> CANNOT CONTINUE BECAUSE REQUEST FAILED!')
+      console.log(req.name)
+
+      process.exit(1)
+    }
+
+    quote('Calling API ends as like real client...')
+
+    req.check = await client.checkWaitlistStatus()
+    req.record = await client.recordActionTrails()
+
+    if (!req.check.success || !req.record.success) {
+      console.log('WARNING: <IMPORTANT> ONE OF REMAINING API EMULATION FAILED!')
+      console.log(JSON.stringify({
+        checkWaitlistStatus: req.check,
+        recordActionTrail: req.record
+      }, null, 2))
+    }
+
+    profile.user = {
+      name,
+      username
+    }
+  } else {
+    profile.user = req.login.user_profile
   }
   if (!req.login.is_verified) {
     console.log('WARNING: Account is not verified!')
   }
 
-  profile.user = req.login.user_profile
+  quote('Writing profile data...')
+
   profile.tokens = {
     access: req.login.access_token,
     auth: req.login.auth_token,
     refresh: req.login.refresh_token
   }
   profile.verified = req.login.is_verified
+  profile._debug = {
+    req
+  }
 
   const data = JSON.stringify(profile, null, 2)
 
@@ -200,4 +278,11 @@ module.exports = (async () => {
 
   quote('All done!')
   console.log('Keep saved profile data safe as you can.')
-})()
+}
+
+try {
+  init()
+} catch (error) {
+  console.error('ERROR!', error)
+  console.log(req)
+}
