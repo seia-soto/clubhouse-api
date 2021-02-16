@@ -9,7 +9,7 @@ const path = require('path')
 const { Client, profiles } = require('../src')
 
 const profile = {
-  ...profiles.application.a297,
+  ...profiles.application.a304,
   ...profiles.locales.Korean
 }
 const profileLoc = path.join(__dirname, '../profile.json')

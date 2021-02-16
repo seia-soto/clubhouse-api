@@ -84,7 +84,7 @@ const init = async () => {
   const [phoneNumber, phoneNumberNation, phoneNumberUser] = phoneNumberMatch
 
   const profile = {
-    ...profiles.application.a297,
+    ...profiles.application.a304,
     ...profiles.locales[language],
     deviceId
   }
