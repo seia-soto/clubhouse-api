@@ -32,12 +32,13 @@ export default class Client {
     }
   }
 
-  initiateVoiceClient (opts, override) {
+  async initiateVoiceClient (opts, override) {
     const voiceClient = new VoiceClient({
       client: this,
       options: opts,
       profile: this.profile
     })
+    await voiceClient.initiate()
 
     if (override || !this.voice) {
       this.voice = voiceClient

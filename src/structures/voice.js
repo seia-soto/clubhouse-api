@@ -1,5 +1,3 @@
-import * as AgoraRTC from 'agora-rtc-sdk-ng'
-
 export default class Voice {
   constructor (opts) {
     this.options = opts.options || {
@@ -8,11 +6,15 @@ export default class Voice {
     }
     this.profile = opts.profile
     this.api = opts.client
-    this.client = new AgoraRTC(this.options)
 
     if (!window) {
       this.api.debug('Initiated voice client in non-browser environment and some functions may not work.')
     }
+  }
+
+  async initiate () {
+    this.AgoraRTC = await import('agora-rtc-sdk-ng')
+    this.client = new this.AgoraRTC(this.options)
   }
 
   async join (channelId, userId) {
