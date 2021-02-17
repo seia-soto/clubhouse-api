@@ -11,10 +11,7 @@ const getChannel = async (profile, channel) => {
         channel_id: null
       }
     },
-      {
-      ...profile,
-      userId: '(null)'
-    }
+    profile
   )
   const data = await response.json()
 
