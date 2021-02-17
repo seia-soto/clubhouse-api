@@ -163,6 +163,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"agora-rtc-sdk-ng@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "agora-rtc-sdk-ng@npm:4.3.0"
+  checksum: acea6e33c985a58ec2c647c619e6ab38d039d573ac10d2d06501c5e23439762100c2a7290366935bf72244a9a6f8e5c2065c902ba4523fb7e9060d0759bea825
+  languageName: node
+  linkType: hard
+
 "ajv@npm:^6.10.0, ajv@npm:^6.12.4":
   version: 6.12.6
   resolution: "ajv@npm:6.12.6"
@@ -341,6 +348,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "clubhouse-api@workspace:."
   dependencies:
+    agora-rtc-sdk-ng: ^4.3.0
     babel-eslint: ^10.1.0
     debug: ^4.3.1
     eslint: ^7.19.0

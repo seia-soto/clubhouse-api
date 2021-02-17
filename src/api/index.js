@@ -45,9 +45,11 @@ import checkWaitlistStatus from './checkWaitlistStatus'
 import recordActionTrails from './recordActionTrails'
 import updateName from './updateName'
 import updateUsername from './updateUsername'
-import audienceReply from './audienceReply';
-import acceptSpeakerInvite from './acceptSpeakerInvite';
-import getChannel from "./getChannel";
+import audienceReply from './audienceReply'
+import acceptSpeakerInvite from './acceptSpeakerInvite'
+import getChannel from './getChannel'
+import getNotifications from './getNotifications'
+import getActionableNotifications from './getActionableNotifications'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -103,5 +105,7 @@ export {
   updateUsername,
   audienceReply,
   acceptSpeakerInvite,
-  getChannel
+  getChannel,
+  getNotifications,
+  getActionableNotifications
 }

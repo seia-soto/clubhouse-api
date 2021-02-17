@@ -4,7 +4,8 @@ import * as structures from './structures'
 
 const {
   agent,
-  client: Client
+  client: Client,
+  voice: Voice
 } = structures
 
 export {
@@ -12,5 +13,6 @@ export {
   profiles,
   structures,
   agent,
-  Client
+  Client,
+  Voice
 }
