@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 const agent = (url, options, customs) => {
   'use strict'
 
-  url = 'https://www.clubhouseapi.com/api' + (url || '')
+  url = (customs.apiRoot || 'https://www.clubhouseapi.com/api') + (url || '')
 
   options = options || {}
   customs = customs || {}
@@ -26,13 +26,13 @@ const agent = (url, options, customs) => {
   // NOTE: Application;
   options.headers.Accept = customs.accept || 'application/json'
   options.headers['Accept-Encoding'] = customs.acceptEncodings || 'gzip, deflate, br'
-  options.headers['Accept-Language'] = customs.acceptLanguages || 'ko-KR;q=1'
+  options.headers['Accept-Language'] = customs.acceptLanguages || 'en-US;q=1'
   // NOTE: Specification;
   options.headers.Connection = 'keep-alive'
   options.headers.Host = 'www.clubhouseapi.com'
 
   // NOTE: Body;
-  if (!customs._preventBodySerialization && options.body && typeof options.body === 'object') {
+  if (!customs._preventBodySerialization && typeof options.body === 'object') {
     options.method = 'POST'
     options.headers['Content-Type'] = 'application/json; charset=utf-8'
     options.body = JSON.stringify(options.body)
