@@ -50,6 +50,7 @@ import acceptSpeakerInvite from './acceptSpeakerInvite'
 import getChannel from './getChannel'
 import getNotifications from './getNotifications'
 import getActionableNotifications from './getActionableNotifications'
+import requestMobileAuthAgain from './requestMobileAuthAgain'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -107,5 +108,6 @@ export {
   acceptSpeakerInvite,
   getChannel,
   getNotifications,
-  getActionableNotifications
+  getActionableNotifications,
+  requestMobileAuthAgain
 }
