@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 import * as api from '../api'
 import { createLogger } from '../utils'
+import VoiceClient from './voice'
 
 export default class Client {
   constructor (opts) {
@@ -29,5 +30,19 @@ export default class Client {
         return fn(this.profile, ...args)
       }
     }
+  }
+
+  initiateVoiceClient (opts, override) {
+    const voiceClient = new VoiceClient({
+      client: this,
+      options: opts,
+      profile: this.profile
+    })
+
+    if (override || !this.voice) {
+      this.voice = voiceClient
+    }
+
+    return voiceClient
   }
 }

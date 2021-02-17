@@ -5,6 +5,7 @@ The API wrapper for Clubhouse application (drop-in audio chat) based on online p
 > **Warning**
 >
 > This API client comes without any warrenty.
+> Also, using `master` branch is not recommended.
 
 ## Table of Contents
 
@@ -13,6 +14,8 @@ The API wrapper for Clubhouse application (drop-in audio chat) based on online p
 - [Scripts](#scripts)
 - [Reverse Engineering](#reverse-engineering)
 - [API](#api)
+  - [Browser support](#browser-support)
+  - [Voice support](#voice-support)
 - [LICENSE](#LICENSE)
 
 ----
@@ -155,6 +158,35 @@ Then you can go to `Toolbox` tab and click `Open SSH Tunnel` to open SSH port lo
 About the API implemented in this project.
 Only special things will be typed.
 
+## Browser support
+
+The code is also available for common web browser as this project doesn't contain any code that requires additional C code build.
+However, there are many ban reports from web browser use, so if you want to use this on web browser, you should build proxy server.
+
+## Voice support
+
+Actually, the capacity of voice support is already present in my repository since `src/api/joinChannel.js` method implemented.
+However, there is not enough information to keep users safe from unexpected bans, and I couldn't say `You can use this to do Clubhouse!`.
+Other unofficial repositories are already doing voice stuff with Agora SDK built for their language, but I couldn't say that is safe to use.
+Because, commonly for who operating production service can see every users connecting to specific gateway and it is easy to detect what users are using if user didn't change any thing on official SDK.
+In future, I am planning to port iOS's Agora voice SDK into Node.JS to reduce ban rate.
+However, limitation of my iOS ecosystem knowledge, currently only official JavaScript SDK is available to use and there is a huge limitation, which requires web browser context.
+
+For additional information about SDK, please refer:
+
+- [AgoraWebSDK NG API Docs](https://agoraio-community.github.io/AgoraWebSDK-NG/api/en)
+
+NG is Next Generation in Agora Ecosystem.*
+
+### Electron applications
+
+For Electron based applications, you can easily integrate Agora with my clubhouse-api package.
+You can see the example that describes how to get RTM token stuff in `src/structures/voice.js`.
+
+For additional information about Electron SDK, please refer:
+
+- [AgoraIO/Electron-SDK](https://github.com/AgoraIO/Electron-SDK)
+
 ## `client.getStatic(url)`
 
 `client.getStatic` method will return a `node-fetch` agent which having essential headers to query static files.
@@ -175,6 +207,16 @@ const download = url => {
   })
 }
 ```
+
+## `client.initiateVoiceClient(opts, override)`
+
+> **Warning**
+>
+> The voice support is ***NOT PRESENT*** and you shouldn't use this yet!
+
+This method will create VoiceClient interface and return VoiceClient object after attaching VoiceClient to `client.voice` property.
+If you set `override` to truthy value, you can set `client.voice` property forcely with new client.
+The `opts` value in arguments will be passed into `AgoraRTC.createClient` method of Agora Web SDK NG directly.
 
 # LICENSE
 
