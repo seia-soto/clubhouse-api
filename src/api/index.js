@@ -45,6 +45,8 @@ import checkWaitlistStatus from './checkWaitlistStatus'
 import recordActionTrails from './recordActionTrails'
 import updateName from './updateName'
 import updateUsername from './updateUsername'
+import getNotifications from './getNotifications'
+import getActionableNotifications from './getActionableNotifications'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -97,5 +99,7 @@ export {
   checkWaitlistStatus,
   recordActionTrails,
   updateName,
-  updateUsername
+  updateUsername,
+  getNotifications,
+  getActionableNotifications
 }
