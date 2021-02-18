@@ -5,8 +5,8 @@ const inviteToApp = async (profile, contactName, phoneNumber) => {
 
   const response = await agent('/invite_to_app', {
     body: {
-      name: contactName,
-      phone_number: phoneNumber
+      name: contactName || 'User',
+      phone_number: phoneNumber // +821012345678
     }
   }, profile)
   const data = await response.json()

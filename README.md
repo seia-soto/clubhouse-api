@@ -91,7 +91,7 @@ If you've setup MITM proxy, open `http://mitm.it` on your iPhone, then install c
 
 ## Bypassing SSL Pinning
 
-To inspect SSL Pinning, there are ways to bypass it easily.
+To inspect HTTP packet, there are ways to bypass it easily.
 
 ### ssl-kill-switch
 
