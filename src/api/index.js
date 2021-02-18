@@ -29,6 +29,7 @@ import getEvent from './getEvent'
 import getClubs from './getClubs'
 import editEvent from './editEvent'
 import deleteEvent from './deleteEvent'
+import inviteToApp from './inviteToApp'
 import inviteToExistingChannel from './inviteToExistingChannel'
 import followClub from './followClub'
 import unfollowClub from './unfollowClub'
@@ -88,6 +89,7 @@ export {
   getClubs,
   editEvent,
   deleteEvent,
+  inviteToApp,
   inviteToExistingChannel,
   followClub,
   unfollowClub,
