@@ -54,10 +54,10 @@ const init = async () => {
 
   quote('Please <type> valid phone number below.')
   console.log('For example, let me assume that you have one Korean number: +82 10-1234-5678')
-  console.log('Then put: +821012345678')
+  console.log('Then put: +82 1012345678') // NOTE: https://github.com/Seia-Soto/clubhouse-api/issues/10;
 
   const phoneNumberInput = await getAnswer(createInterface())
-  const phoneNumberMatch = /\+(\d{2})(\d+)/.exec(phoneNumberInput)
+  const phoneNumberMatch = /\+(\d+)\s+(\d+)/.exec(phoneNumberInput)
 
   if (!phoneNumberInput || !phoneNumberMatch || phoneNumberMatch.length < 3) {
     console.log('ERROR: Please, put valid phone number!')
