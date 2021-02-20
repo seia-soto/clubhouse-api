@@ -81,7 +81,7 @@ const init = async () => {
     process.exit(0)
   }
 
-  const phoneNumber = phoneNumberMatch.replace(/\s/g, '')
+  const phoneNumber = phoneNumberInput.replace(/\s/g, '')
   const [, phoneNumberNation, phoneNumberUser] = phoneNumberMatch
 
   const profile = {
