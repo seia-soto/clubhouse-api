@@ -52,6 +52,8 @@ import getChannel from './getChannel'
 import getNotifications from './getNotifications'
 import getActionableNotifications from './getActionableNotifications'
 import requestMobileAuthAgain from './requestMobileAuthAgain'
+import block from './block'
+import unblock from './unblock'
 
 // NOTE: Externals
 import getStatic from './getStatic'
@@ -111,5 +113,7 @@ export {
   getChannel,
   getNotifications,
   getActionableNotifications,
-  requestMobileAuthAgain
+  requestMobileAuthAgain,
+  block,
+  unblock
 }
