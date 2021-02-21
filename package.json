@@ -4,18 +4,21 @@
   "main": "src/index.js",
   "author": "Seia-Soto <seia@outlook.kr>",
   "license": "MIT",
+  "types": "src/index.d.ts",
   "scripts": {
     "example": "node example",
     "profile": "node scripts/profile"
   },
   "devDependencies": {
+    "@types/node-fetch": "^2.5.8",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.19.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.3.1"
+    "eslint-plugin-promise": "^4.3.1",
+    "typescript": "^4.1.5"
   },
   "dependencies": {
     "debug": "^4.3.1",
