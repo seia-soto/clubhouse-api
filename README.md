@@ -165,6 +165,10 @@ However, there are many ban reports from web browser use, so if you want to use 
 
 ## Voice support
 
+> **Update 2021/02/21**
+>
+> Voice-related support will not present after today because it is PART OF AGORA, not CLUBHOUSE.
+
 Actually, the capacity of voice support is already present in my repository since `src/api/joinChannel.js` method implemented.
 However, there is not enough information to keep users safe from unexpected bans, and I couldn't say `You can use this to do Clubhouse!`.
 Other unofficial repositories are already doing voice stuff with Agora SDK built for their language, but I couldn't say that is safe to use.
@@ -208,15 +212,19 @@ const download = url => {
 }
 ```
 
-## `client.initiateVoiceClient(opts, override)`
+## `fetch` option overrides
 
-> **Warning**
->
-> The voice support is ***NOT PRESENT*** and you shouldn't use this yet!
+To override `node-fetch` option object, you need to provide re-usable object to `profile.fetchOptions`.
 
-This method will create VoiceClient interface and return VoiceClient object after attaching VoiceClient to `client.voice` property.
-If you set `override` to truthy value, you can set `client.voice` property forcely with new client.
-The `opts` value in arguments will be passed into `AgoraRTC.createClient` method of Agora Web SDK NG directly.
+```js
+const profile = {
+  ...profiles.application.a304,
+  ...profiles.locales.Korean,
+  fetchOptions: {
+    agent: ... // NOTE: For proxy stuff;
+  }
+}
+```
 
 # LICENSE
 
