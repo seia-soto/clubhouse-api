@@ -1,2 +1,2 @@
-declare var content: any;
-export = content;
+declare var content: any
+export = content

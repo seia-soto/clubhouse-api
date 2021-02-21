@@ -1,3 +1,3 @@
-import fetch from "node-fetch";
+import fetch from "node-fetch"
 
-export default function agent(url: string, options: any, customs: any): ReturnType<typeof fetch>;
+export default function agent(url: string, options: any, customs: any): ReturnType<typeof fetch>
