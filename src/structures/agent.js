@@ -49,6 +49,12 @@ const agent = (url, options, customs) => {
     delete options.query
   }
 
+  // NOTE: Additionals;
+  options = {
+    ...options,
+    ...customs.fetchOptions
+  }
+
   return fetch(url, options)
 }
 
