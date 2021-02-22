@@ -1,5 +1,5 @@
-type Locale = { languages?: string, locale?: string, acceptLanguages?: string }
-type Application = {
+interface Locale { languages?: string, locale?: string, acceptLanguages?: string }
+interface Application {
   apiRoot?: string
   userAgent?: string
   userAgentStatic?: string
@@ -14,9 +14,9 @@ type Application = {
 }
 
 type Profile = Application & Locale & {
-  token?: string,
-  userId?: string,
-  deviceId?: string,
+  token?: string
+  userId?: string
+  deviceId?: string
   fetchOptions?: any
 }
 
