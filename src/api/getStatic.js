@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import fetch from 'cross-fetch'
 import qs from 'qs'
 
 const getStatic = (profile, url, options) => {

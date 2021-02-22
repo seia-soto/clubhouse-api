@@ -1,6 +1,6 @@
 export default {
   apiRoot: 'https://www.clubhouseapi.com/api',
-  userAgnet: 'clubhouse/297 (iPhone; iOS 14.4; Scale/2.00)',
+  userAgent: 'clubhouse/297 (iPhone; iOS 14.4; Scale/2.00)',
   userAgentStatic: 'Clubhouse/297 CFNetwork/1220.1 Darwin/20.3.0',
   appVersion: '0.1.27',
   appBuild: '297',

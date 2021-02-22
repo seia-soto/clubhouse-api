@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import fetch from 'cross-fetch'
 import qs from 'qs'
 import { v4 as uuidv4 } from 'uuid'
 

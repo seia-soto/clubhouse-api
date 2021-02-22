@@ -1,3 +1,4 @@
-import fetch from "node-fetch"
+import fetch  from "cross-fetch"
+import { Profile } from "../profiles"
 
-export default function agent(url: string, options: any, customs: any): ReturnType<typeof fetch>
+export default function agent(url: string, options: any, customs: Profile): ReturnType<typeof fetch>
