@@ -6,6 +6,7 @@
   "license": "MIT",
   "types": "src/index.d.ts",
   "scripts": {
+    "lint": "eslint --ext .js,.ts",
     "example": "node example",
     "profile": "node scripts/profile"
   },
