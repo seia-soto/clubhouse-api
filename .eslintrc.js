@@ -13,5 +13,13 @@ module.exports = {
   },
   rules: {
   },
-  ignorePatterns: ['*.d.ts']
+  overrides: [{
+    files: ['*.d.ts'],
+    extends: [
+      'standard-with-typescript'
+    ],
+    parserOptions: {
+      project: 'tsconfig.json'
+    }
+  }]
 }

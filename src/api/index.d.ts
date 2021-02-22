@@ -1,2 +1,2 @@
-declare var content: any
+declare const content: any
 export = content

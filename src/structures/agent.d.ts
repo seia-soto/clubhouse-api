@@ -1,4 +1,5 @@
-import fetch  from "cross-fetch"
-import { Profile } from "../profiles"
+import fetch from 'cross-fetch'
+import { Profile } from '../profiles'
 
-export default function agent(url: string, options: any, customs: Profile): ReturnType<typeof fetch>
+declare function agent (url: string, options: any, customs: Profile): ReturnType<typeof fetch>
+export default agent
