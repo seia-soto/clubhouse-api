@@ -193,7 +193,7 @@ For additional information about Electron SDK, please refer:
 
 ## `client.getStatic(url)`
 
-`client.getStatic` method will return a `node-fetch` agent which having essential headers to query static files.
+`client.getStatic` method will return a `cross-fetch` agent which having essential headers to query static files.
 For example, you can download profile picture safely by using this method.
 
 ```js
@@ -214,7 +214,7 @@ const download = url => {
 
 ## `fetch` option overrides
 
-To override `node-fetch` option object, you need to provide re-usable object to `profile.fetchOptions`.
+To override `cross-fetch` option object, you need to provide re-usable object to `profile.fetchOptions`.
 
 ```js
 const profile = {

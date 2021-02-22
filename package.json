@@ -10,7 +10,6 @@
     "profile": "node scripts/profile"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.5.8",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.19.0",
     "eslint-config-standard": "^16.0.2",
