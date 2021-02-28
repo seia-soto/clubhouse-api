@@ -4,7 +4,7 @@ const joinChannel = async (profile, opts) => {
   'use strict'
 
   opts = opts || {}
-  opts.soruce = opts.source || 'feed'
+  opts.source = opts.source || 'feed'
 
   const attributions = {
     is_explore: opts.isExplore,

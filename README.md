@@ -1,6 +1,6 @@
 # Seia-Soto/Clubhouse-API
 
-The API wrapper for Clubhouse application (drop-in audio chat) based on online private API documentation and pwned soruces by myself.
+The API wrapper for Clubhouse application (drop-in audio chat) based on online private API documentation and pwned sources by myself.
 
 > **Warning**
 >
