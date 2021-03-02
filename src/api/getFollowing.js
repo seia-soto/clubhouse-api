@@ -1,6 +1,6 @@
 import agent from '../structures/agent'
 
-const getFollowings = async (profile, opts) => { // NOTE: opts = Number | Object;
+const getFollowing = async (profile, opts) => { // NOTE: opts = Number | Object;
   'use strict'
 
   if (typeof opts === 'number') {
@@ -12,7 +12,7 @@ const getFollowings = async (profile, opts) => { // NOTE: opts = Number | Object
   opts = opts || {}
 
   const response = await agent(
-    '/get_followings',
+    '/get_following',
     {
       query: {
         user_id: opts.userId || -1,
@@ -30,7 +30,7 @@ const getFollowings = async (profile, opts) => { // NOTE: opts = Number | Object
   return data
 }
 
-export default getFollowings
+export default getFollowing
 
 export const specification = {
   clubs: [

@@ -40,7 +40,7 @@ import removeTopic from './removeTopic'
 import updateNotifications from './updateNotifications'
 import updateBio from './updateBio'
 import getFollowers from './getFollowers'
-import getFollowings from './getFollowings'
+import getFollowing from './getFollowing'
 import updateAvatar from './updateAvatar'
 import checkWaitlistStatus from './checkWaitlistStatus'
 import recordActionTrails from './recordActionTrails'
@@ -102,7 +102,7 @@ export {
   updateNotifications,
   updateBio,
   getFollowers,
-  getFollowings,
+  getFollowing,
   updateAvatar,
   checkWaitlistStatus,
   recordActionTrails,
