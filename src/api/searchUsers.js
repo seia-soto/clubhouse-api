@@ -3,6 +3,12 @@ import agent from '../structures/agent'
 const searchUsers = async (profile, opts) => {
   'use strict'
 
+  if (typeof opts === 'string') {
+    opts = {
+      query: opts
+    }
+  }
+
   opts = opts || {}
 
   const response = await agent(
